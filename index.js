@@ -67,7 +67,14 @@ function addReview (arr, name, rating, feedback){
 
 console.log(addReview(reviews,'Gabby', 4, 'Wonderful, loved the atomosphere'));
 
-/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"*/
+
+function addFeedback (arr, index, feedback){
+  arr[index].feedback = feedback;
+  return arr;
+}
+
+console.log(addFeedback(reviews, 7, 'this place is chill with really cool people, great for getting work done on weekdays'));
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
@@ -81,9 +88,10 @@ and should return a string in the format `{name} gave the restaurant a {rating},
  * For example, if getReviewByIndex is invoked with reviews and the number 0
  * it will return `Daniela gave the restaurant a 5 star review and their feedback was: Beautiful atmosphere and wonderful vegan options!`
 */
-function getReviewByIndex(reviews, index) {
-    /* code here */
+function getReviewByIndex(arr, index) {
+    return `${arr[index].name} gave the restaurant a ${arr[index].rating}, and their feedback was: ${arr[index].feedback}`;
   }
+  console.log(getReviewByIndex(reviews, 2));
   
 
 /* Task 7: Write a function to get information about the most recent review called `getLastReview`
@@ -95,10 +103,12 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
-function getLastReview(/* code here */) {
-    /* code here */
+function getLastReview(arr) {
+    arr = (arr[arr.length - 1]);
+    return `${arr.name} gave the restaurant a ${arr.rating} and their feedback was: ${arr.feedback}`;
   } 
 
+console.log(getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
